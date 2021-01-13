@@ -23,12 +23,9 @@ export default function NavBar() {
   return (
     <div className={classes.root}>
           <Paper>
-            <AppBar className={classes.appBar} >
+            <AppBar className={classes.appBar} position='static' >
               <Toolbar>
-                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                  <MenuIcon />
-                </IconButton>
-                <Typography variant="h4" className={classes.title}>
+                <Typography variant="h5" className={classes.title}>
                   Lubbock Small Business
                 </Typography>
                 <Button color="inherit">Home</Button>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
-import Listings from './Components/Listings';
-import ListingDetail from './Components/ListingDetail';
-import Login from './Components/Login';
-import AddListing from './Components/AddListing'
+import Listings from './Containers/Listings';
+// import ListingDetail from './Components/ListingDetail';
+// import Login from './Components/Login';
+// import AddListing from './Components/AddListing'
 
 const Router = () => {
     return (
