@@ -35,5 +35,6 @@ export default {
             address:'3226 87th St. Lubbock TX 79493'
 
         },
-    ]
+    ],
+    loggedIn: false
 }
