@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import initState from '../data/state'
 
-const business = (state = initState.business, action) => {
+const business = (state = initState, action) => {
     switch(action.type){
         case "ADD_BUSINESS":
             return [...state, action.value]
@@ -14,14 +14,16 @@ const business = (state = initState.business, action) => {
     }
 }
 
-const loggedIn = (state = initState.loggedIn, action) => {
+const loggedIn = (state = initState, action) => {
     switch(action.type){
         case 'SIGN_IN':
             return true
-
+        case 'SIGN_OUT':
+            return false
         default:
             return state
     }
 }
+
 
 export default combineReducers({ business, loggedIn })

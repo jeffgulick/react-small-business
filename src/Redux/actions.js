@@ -10,3 +10,9 @@ export const removeBusiness = (index) => {
         value: index
     }
 }
+
+export const signOut = () => {
+    return {
+        type: 'SIGN_OUT'
+    }
+}

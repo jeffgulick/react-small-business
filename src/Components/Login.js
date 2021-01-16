@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, CardActions, Typography, TextField, Button } from '@material-ui/core';
 
@@ -50,12 +50,13 @@ export default function SignIn (props) {
   const classes = useStyles();
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  let history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault()
     document.cookie = "loggedIn=true;max-age=60*1000"
-    // window.location.replace("/");// dont use this, is bad for this project
     props.signIn()
+    history.push('/')
     setUserName('');
     setPassword('')
   }
