@@ -25,5 +25,14 @@ const loggedIn = (state = initState, action) => {
     }
 }
 
+const getUserName = (state = initState.user, action) => {
+    switch(action.type){
+        case 'GET_USER':
+            return action.value;
+        default:
+            return state
+    }
+}
 
-export default combineReducers({ business, loggedIn })
+
+export default combineReducers({ business, loggedIn, getUserName })

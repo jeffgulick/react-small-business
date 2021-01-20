@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function NavBar(props) {
-  const logIn = props.loggedIn
+  const logIn = props.loggedIn;
   const classes = useStyles();
 
   const logOut = () => {
@@ -55,7 +55,7 @@ export default function NavBar(props) {
                   </div>}
               </Toolbar>
             </AppBar>
-            {logIn ? <div className={classes.status}>You logged in Sucka!</div> : ''}
+            {logIn ? <div className={classes.status}>Logged in as: {props.user.getUserName.userName}</div> : ''}
           </Paper>
     </div>
   );

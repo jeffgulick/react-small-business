@@ -4,6 +4,13 @@ export const signIn = () => {
     }
 }
 
+export const getUserName = (user) => {
+    return {
+        type: 'GET_USER',
+        value: user
+    }
+}
+
 export const removeBusiness = (index) => {
     return {
         type: 'REMOVE_BUSINESS',

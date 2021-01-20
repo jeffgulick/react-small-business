@@ -5,13 +5,13 @@ import { signOut } from '../Redux/actions';
 const mapStateToProps = (state) => {
     return {
         loggedIn: state.loggedIn,
-        user: state.user
+        user: state
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        signOut: () => dispatch(signOut())
-    }
+        signOut: () => dispatch(signOut())}
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar)

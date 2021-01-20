@@ -55,10 +55,14 @@ export default function SignIn (props) {
   const handleSubmit = (event) => {
     event.preventDefault()
     document.cookie = "loggedIn=true;max-age=60*1000"
-    props.signIn()
+
+    const temp = { userName }
+    props.signIn();
+    props.getUserName(temp);
     history.push('/')
     setUserName('');
     setPassword('')
+
   }
 
   return (
