@@ -23,3 +23,10 @@ export const signOut = () => {
         type: 'SIGN_OUT'
     }
 }
+
+export const addBusiness = (business) => {
+    return {
+        type: 'ADD_BUSINESS',
+        value: business
+    }
+}
