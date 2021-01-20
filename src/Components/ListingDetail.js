@@ -3,6 +3,7 @@ import Map from './Map';
 import { makeStyles } from '@material-ui/core/styles';
 import { Paper, Grid, Typography } from '@material-ui/core';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -19,13 +20,12 @@ const ListingDetail = (props) => {
     const id = props.match.params.id;
     const selection = props.business.find(item => item.id == id);
     const classes = useStyles();
-    const api = 'AIzaSyBMTv_BRygY9YedijQzc_byEaDvb_sCOPk'
 
     const [latt, setLatt] = useState(33.57);
     const [long, setLong] = useState(-101.89);
 
     useEffect(() => {
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${selection.address}&key=${api}`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${selection.address}&key=${process.env.REACT_APP_MAP_API}`)
         .then(response => response.json())
         .then(data => {
             setLatt(data.results[0].geometry.location.lat);
