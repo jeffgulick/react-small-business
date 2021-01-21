@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography, Button, Paper } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Button, Paper, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
     color: 'white'
   },
   status: {
-    backgroundColor: '#D3D3D3'
+    backgroundColor: '#D3D3D3',
+    paddingLeft:'15pt'
   }
 }));
 
@@ -35,28 +36,28 @@ export default function NavBar(props) {
   }
   
   return (
-    <div className={classes.root}>
-          <Paper>
-            <AppBar className={classes.appBar} position='static' >
-              <Toolbar>
-                <Typography variant="h5" className={classes.title}>
-                  Lubbock Small Business
-                </Typography>
-                {logIn ?
-                  <div>
-                    <Button color="inherit"><Link className={classes.link} to="/">Listings</Link></Button>
-                    <Button color="inherit"><Link className={classes.link} to="/add">Add</Link></Button>
-                    <Button onClick={logOut} color="inherit"><Link className={classes.link} to="/">LOG OUT</Link></Button>
-                  </div>
-                  :
-                  <div>
-                    <Button color="inherit"><Link className={classes.link} to="/">Listings</Link></Button>
-                    <Button color="inherit"><Link className={classes.link} to="/login">Login</Link></Button>
-                  </div>}
-              </Toolbar>
-            </AppBar>
-            {logIn ? <div className={classes.status}>Logged in as: {props.user.getUserName.userName}</div> : ''}
-          </Paper>
-    </div>
+      <div className={classes.root}>
+            <Paper>
+              <AppBar className={classes.appBar} position='static' >
+                <Toolbar>
+                  <Typography variant="h5" className={classes.title}>
+                    Lubbock Small Business
+                  </Typography>
+                  {logIn ?
+                    <div>
+                      <Button color="inherit"><Link className={classes.link} to="/">Listings</Link></Button>
+                      <Button color="inherit"><Link className={classes.link} to="/add">Add</Link></Button>
+                      <Button onClick={logOut} color="inherit"><Link className={classes.link} to="/">LOG OUT</Link></Button>
+                    </div>
+                    :
+                    <div>
+                      <Button color="inherit"><Link className={classes.link} to="/">Listings</Link></Button>
+                      <Button color="inherit"><Link className={classes.link} to="/login">Login</Link></Button>
+                    </div>}
+                </Toolbar>
+              </AppBar>
+              {logIn ? <div className={classes.status}>Logged in as: {props.user.getUserName.userName}</div> : ''}
+            </Paper>
+      </div>
   );
 }

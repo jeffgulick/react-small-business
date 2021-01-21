@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
 import Map from './Map';
 import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Grid, Typography } from '@material-ui/core';
+import { Paper, Grid, Typography, Container } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
       padding: theme.spacing(0, 3),
+      marginTop: "30pt"
     },
     paper: {
       maxWidth: 450,
-      margin: `${theme.spacing(1)}px auto`,
+      margin: `${theme.spacing(0)}px auto`,
       padding: theme.spacing(2),
+    },
+    grid: {
+      margin:0,
     },
   }));
   
@@ -37,38 +41,42 @@ const ListingDetail = (props) => {
     },[latt, long, selection.address]);
 
     return (
-      <div className={classes.root}>
-        <Paper className={classes.paper}>
-          <Grid container wrap="nowrap" spacing={2}>
-            <Grid item>
+      <Container>
+        <div className={classes.root}>
+          <Paper className={classes.paper}>
+            <Grid container wrap="nowrap" spacing={2}>
+              <Grid item>
+              </Grid>
+              <Grid item xs zeroMinWidth>
+                <Typography style={{fontWeight:"bold"}} noWrap>{selection.name}</Typography>
+                <Typography noWrap>{selection.address}</Typography>
+                <Typography style={{fontWeight:"bold"}} noWrap>Hours: </Typography>
+                <Typography noWrap>Hours: {selection.hours}</Typography>
+              </Grid>
             </Grid>
-            <Grid item xs zeroMinWidth>
-              <Typography style={{fontWeight:"bold"}} noWrap>{selection.name}</Typography>
-              <Typography noWrap>{selection.address}</Typography>
-              <Typography noWrap>{selection.hours}</Typography>
+          </Paper>
+          <Paper className={classes.paper}>
+            <Grid container wrap="nowrap" spacing={2}>
+              <Grid item>
+              </Grid>
+              <Grid item xs>
+                <Typography style={{fontWeight:"bold"}} noWrap>Description: </Typography>
+                <Typography>{selection.description}</Typography>
+              </Grid>
             </Grid>
-          </Grid>
-        </Paper>
-        <Paper className={classes.paper}>
-          <Grid container wrap="nowrap" spacing={2}>
-            <Grid item>
-            </Grid>
-            <Grid item xs>
-              <Typography>{selection.description}</Typography>
-            </Grid>
-          </Grid>
-        </Paper>
-        <Paper className={classes.paper}>
-          <Grid container wrap="nowrap" spacing={2}>
-            <Grid item>
-            </Grid>
+          </Paper>
+          <Paper className={classes.paper}>
+            <Grid container wrap="nowrap" spacing={2}>
+              <Grid item>
+              </Grid>
 
-            <Grid item xs>
-              <Map latt={latt} long={long} listingName={selection.name} />
+              <Grid item xs>
+                <Map latt={latt} long={long} listingName={selection.name} />
+              </Grid>
             </Grid>
-          </Grid>
-        </Paper>
-      </div>
+          </Paper>
+        </div>
+      </Container>
     );}
  
 export default ListingDetail;
