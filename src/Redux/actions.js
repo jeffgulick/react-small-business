@@ -30,3 +30,10 @@ export const addBusiness = (business) => {
         value: business
     }
 }
+/////////////////////////////////////////////////////////////////
+export const addLocation = (location) => {
+    return {
+        type: 'ADD_LOCATION',
+        value: location
+    }
+}

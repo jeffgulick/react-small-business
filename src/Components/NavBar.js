@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appBar: {
-    backgroundColor: '#333333',
+    backgroundColor: '#3CB371',
   },
   link: {
     textDecoration: 'none',

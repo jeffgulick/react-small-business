@@ -43,5 +43,9 @@ export default {
         },
     ],
     loggedIn: false,
-    user: 'yo'
+    user: 'yo',
+    location: {
+        lat: '33.57',
+        long: '-101.89'
+    }
 }

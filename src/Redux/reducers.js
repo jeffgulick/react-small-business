@@ -33,6 +33,15 @@ const getUserName = (state = initState.user, action) => {
             return state
     }
 }
+/////////////////////////////////////////////////////////////
+const addLocation = (state = initState.location, action) => {
+    switch(action.type){
+        case 'ADD_LOCATION':
+            return action.value;
+        default:
+            return state;
+    }
+}
 
 
-export default combineReducers({ business, loggedIn, getUserName })
+export default combineReducers({ business, loggedIn, getUserName, addLocation })

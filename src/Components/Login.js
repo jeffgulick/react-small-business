@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     alignContent:"center",
     justifyContent:"center",
     marginTop: "35pt",
-    backgroundColor:"#EE0000",
+    backgroundColor:"#3CB371",
   },
   typo: {
     display:"grid",
@@ -83,14 +83,14 @@ export default function SignIn (props) {
               <Button type="submit" className={classes.button} variant="contained" color="primary">Submit</Button>
           </form>
           </CardContent>
-            <CardActions className={classes.action}>
+            {/* <CardActions className={classes.action}>
               <Link to= "/register" >
                 <a href>Sign Up</a>
               </Link>
               <Link to= "/register" >
                 <a href>Something Else</a>
               </Link>
-            </CardActions>
+            </CardActions> */}
       </Card>
     </div>
   );

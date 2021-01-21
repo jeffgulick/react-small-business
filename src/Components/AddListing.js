@@ -14,14 +14,15 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(2),
       textAlign: 'left',
       color: theme.palette.text.secondary,
-      height: "100%"
+      height: "100%",
+      marginTop:"10pt"
     },
     button: {
         width: '35ch',
         alignContent:"center",
         justifyContent:"center",
-        marginTop: "35pt",
-        backgroundColor:"#EE0000",
+        marginTop: "50pt",
+        backgroundColor:"#3CB371",
       },
   }));
 

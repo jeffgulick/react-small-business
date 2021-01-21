@@ -24,6 +24,10 @@ const ListingDetail = (props) => {
     const id = props.match.params.id;
     const selection = props.business.find(item => item.id == id);
     const classes = useStyles();
+    let location = {
+      lat:'',
+      long:''
+  }
 
     const [latt, setLatt] = useState(33.57);
     const [long, setLong] = useState(-101.89);
@@ -34,6 +38,9 @@ const ListingDetail = (props) => {
         .then(data => {
             setLatt(data.results[0].geometry.location.lat);
             setLong(data.results[0].geometry.location.lng);
+            location.lat = latt
+            location.long = long
+            props.addLocation(location)
         })
         .catch(error => {
             console.log(error);
