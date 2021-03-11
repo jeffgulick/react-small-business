@@ -34,7 +34,7 @@ const getUserName = (state = initState.user, action) => {
     }
 }
 /////////////////////////////////////////////////////////////
-const addLocation = (state = initState.location, action) => {
+const addLocation = (state = {}, action) => {
     switch(action.type){
         case 'ADD_LOCATION':
             return action.value;

@@ -36,6 +36,7 @@ const ListingDetail = (props) => {
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${selection.address}&key=${process.env.REACT_APP_MAP_API}`)
         .then(response => response.json())
         .then(data => {
+            console.log(data)
             setLatt(data.results[0].geometry.location.lat);
             setLong(data.results[0].geometry.location.lng);
             location.lat = latt

@@ -6,7 +6,7 @@ export default {
             name:'CENTERPOINTE EVENT CENTER',
             description:'Weddings, Parties & Special Events Planning and/or CateringHotels & MotelsBanquets, Parties, Wedding & Special Events CenterConvention, Conference & Meeting Services and/or Facilities',
             hours:'8AM - 5PM',
-            address:'4925 Marsha Sharp Fwy., Lubbock TX 79407'
+            address:'4925 Marsha Sharp Fwy, Lubbock TX 79407'
 
         },
         {
