@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
 import state from '../data/state';
@@ -6,8 +6,5 @@ import state from '../data/state';
 export default createStore(
     reducers, 
     state,
-    compose(
-        applyMiddleware(thunk),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-        )
+    applyMiddleware(thunk)
 ) 
